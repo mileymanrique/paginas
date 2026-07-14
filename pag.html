@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Destino Turístico</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:black;
+    color:white;
+    overflow:hidden;
+}
+
+/* HEADER */
+header{
+    position:absolute;
+    top:0;
+    width:100%;
+    padding:25px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:100;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:18px;
+}
+nav a:hover{
+    color:#ffd6ff;
+ }   
+
+/* SLIDER */
+.slider{
+    height:100vh;
+    position:relative;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:1s;
+}
+
+.slide::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.contenido{
+    position:absolute;
+    top:50%;
+    left:80px;
+    transform:translateY(-50%);
+    width:500px;
+    z-index:2;
+}
+
+.contenido span{
+    font-size:18px;
+}
+
+.contenido h1{
+    font-size:70px;
+    margin:20px 0;
+}
+
+.contenido p{
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.contenido button{
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#5a189a;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* MINIATURAS */
+.miniaturas{
+    position:absolute;
+    bottom:60px;
+    right:80px;
+    display:flex;
+    gap:20px;
+    z-index:10;
+}
+
+.card{
+    width:170px;
+    height:220px;
+    border-radius:20px;
+    overflow:hidden;
+    cursor:pointer;
+    position:relative;
+    transform:scale(0.9);
+    transition:0.5s;
+}
+
+.card.active{
+    transform:scale(1);
+    border:3px solid #5a189a;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.card h3{
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    color:white;
+    text-shadow:0 0 5px black;
+}
+
+/* BOTONES */
+.controles{
+    position:absolute;
+    bottom:80px;
+    left:80px;
+    z-index:20;
+}
+
+.controles button{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    margin-right:10px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Destino Turístico</div>
+
+    <nav>
+        <a href="pag.html">Inicio</a>
+        <a href="viajes.html">Viajes</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+</header>
+
+<section class="slider">
+
+    <div class="slide active"
+        style="background-image:url('https://www.jaguaryou.net/wp-content/uploads/2022/01/Sendero-Bola-de-Oro-El-Pital-Mirador.jpg');">
+
+        <div class="contenido">
+            <span>El pital</span>
+
+            <h1>Rio<br>Blanco</h1>
+
+            <p>
+                 El sector está surcado por pequeños ríos cristalinos no profundos que se pueden cruzar a pie durante las caminatas, complementados por pozas naturales aptas para el baño
+            </p>
+
+            <button onclick="window.open('https://www.jaguaryou.net/sendero-bola-de-oro/')">
+                Descubrir Destino
+            </button>
+        </div>
+    </div>
+
+    <div class="slide"
+        style="background-image:url('https://i.ytimg.com/vi/NcCF1arnGlo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCaKWcOTayarzakVAOxwDvwFSuuJQ');">
+
+        <div class="contenido">
+            <span>Agua Blanca</span>
+
+            <h1>Museo<br>Agua Blanca</h1>
+
+            <p>
+             Exhibe urnas funerarias, cerámicas, flechas de obsidiana y las famosas sillas de piedra en forma de "U", símbolos de poder de la cultura Manteña.
+            </p>
+
+            <button onclick="window.open('https://www.comunidadaguablanca.net/')">
+                Descubrir Destino
+            </button>
+        </div>
+    </div>
+
+    <div class="slide"
+        style="background-image:url('https://www.turisec.com/wp-content/uploads/2023/11/sombreritos-1.jpg');">
+
+        <div class="contenido">
+            <span>Puerto López</span>
+
+            <h1>El<br>sombrerito</h1>
+
+            <p>
+                El área cuenta con miradores fotográficos, escalinatas de acceso, playas escondidas y formaciones rocosas únicas.
+            </p>
+
+            <button onclick="window.open('https://www.turisec.com/sendero-el-sombrerito-una-ruta-de-2-km-con-una-vista-de-360-grados/')">
+                Descubrir Destino
+            </button>
+        </div>
+    </div>
+
+    <div class="slide"
+        style="background-image:url('https://buentrip.app/panel/files/media/malecon-montanita-beach-ecuador_5.jpg');">
+
+        <div class="contenido">
+            <span>Montañita</span>
+
+            <h1>Malecón<br>De Montañita</h1>
+
+            <p>
+                Famosa por sus olas de clase mundial, ambiente bohemio y vida nocturna.
+            </p>
+
+            <button onclick="window.open('https://www.proturec.com/montanita/montanita-atractivos/')">
+                Descubrir Destino
+            </button>
+        </div>
+    </div>
+
+</section>
+
+<div class="miniaturas">
+
+    <div class="card active">
+        <img src="https://www.jaguaryou.net/wp-content/uploads/2022/01/Sendero-Bola-de-Oro-El-Pital-Mirador.jpg">
+        <h3>El pital</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://i.ytimg.com/vi/NcCF1arnGlo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCaKWcOTayarzakVAOxwDvwFSuuJQ">
+        <h3>Agua Blanca</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://www.turisec.com/wp-content/uploads/2023/11/sombreritos-1.jpg">
+        <h3>Puerto López</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://buentrip.app/panel/files/media/malecon-montanita-beach-ecuador_5.jpg">
+        <h3>Montañita</h3>
+    </div>
+
+</div>
+
+<div class="controles">
+    <button id="anterior">◀</button>
+    <button id="siguiente">▶</button>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const cards = document.querySelectorAll('.card');
+
+let actual = 0;
+
+function mostrarSlide(index){
+
+    slides.forEach(slide => slide.classList.remove('active'));
+    cards.forEach(card => card.classList.remove('active'));
+
+    slides[index].classList.add('active');
+    cards[index].classList.add('active');
+
+    actual = index;
+}
+
+document.getElementById('siguiente').addEventListener('click', () => {
+    let siguiente = (actual + 1) % slides.length;
+    mostrarSlide(siguiente);
+});
+
+document.getElementById('anterior').addEventListener('click', () => {
+    let anterior = (actual - 1 + slides.length) % slides.length;
+    mostrarSlide(anterior);
+});
+
+cards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+        mostrarSlide(index);
+    });
+});
+</script>
+
+</body>
+</html>
